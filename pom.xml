@@ -54,4 +54,5 @@
             <type>jar</type>
         </dependency>
     </dependencies>
+    <name>Bonusi_noGUI</name>
 </project>

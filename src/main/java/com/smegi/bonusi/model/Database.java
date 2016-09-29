@@ -56,7 +56,6 @@ public class Database {
     }
 
     public void setNews() {
-        Calendar dateTime = Calendar.getInstance();
         Calendar dateTimeExpire = Calendar.getInstance();
         dateTimeExpire.add(Calendar.DATE, 7);
         
@@ -93,10 +92,9 @@ public class Database {
         for (User user : leastMissing) {
             nedostaje.append("& vbnewline & \""+ user.getName() + "\" & vbTab & \"" + user.getMissingToBonusThisMonth() + "\"");
         }
-        
-        System.out.println(top.toString() + nedostaje.toString());
-        
+                
         File file = new File("E:\\Games\\bonusi.vbs");
+        usersList.clear();
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(file));
             bw.write("msgbox " + top.toString() + " & vbNewLine & vbNewLine & " + nedostaje.toString());
